@@ -80,21 +80,7 @@ class RNN(nn.Module):
 n_hidden = 128
 rnn = RNN(n_letters, n_hidden, n_categories)
 
-for genre in top_genre:
-  if genre == '' or genre == 'nan':
-    index = top_genre.index(genre)
-    top_genre.remove(genre)
-    names.remove(names[index])
-print(len(names))
-print(len(top_genre))
-freq = {} 
-for item in top_genre: 
-  if (item in freq): 
-    freq[item] += 1
-  else: 
-    freq[item] = 1
 
-plt.bar(freq.keys(), freq.values(), color='g')
 
 #category_tensor = torch.tensor(y_train, dtype=torch.long)
 #line_tensor = lineToTensor(X_train)
